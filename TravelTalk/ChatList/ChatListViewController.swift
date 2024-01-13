@@ -53,7 +53,16 @@ extension ChatListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "Chat", bundle: nil)
         
+        
+        let vc = sb.instantiateViewController(withIdentifier: ChatDetailViewController.id) as! ChatDetailViewController
+        vc.navigationTitle = mockChatList[indexPath.row].chatroomName
+        vc.data = mockChatList[indexPath.row]
+        
+        navigationController?.pushViewController(vc, animated: true)
+        
+
     }
     
     

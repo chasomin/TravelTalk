@@ -16,7 +16,6 @@ class FriendBubbleTableViewCell: UITableViewCell {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var chatBubbleLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
-    
     @IBOutlet var bubbleView: UIView!
     
     let format = DateFormatter()
@@ -26,6 +25,16 @@ class FriendBubbleTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        setUI()
+        
+    }
+
+
+
+}
+
+extension FriendBubbleTableViewCell {
+    func setUI() {
         DispatchQueue.main.async {
             self.profileImageView.layer.cornerRadius = self.profileImageView.frame.width / 2
         }
@@ -47,10 +56,8 @@ class FriendBubbleTableViewCell: UITableViewCell {
         formatString.dateFormat = "hh:mm a"
         
         selectionStyle = .none
-
-        
     }
-
+    
     func setCell(data: Chat) {
         
         chatBubbleLabel.text = data.message
@@ -60,14 +67,9 @@ class FriendBubbleTableViewCell: UITableViewCell {
         nameLabel.text = data.user.rawValue
         profileImageView.image = UIImage(named: data.user.profileImage)
         
-        guard let date = format.date(from: data.date) else {
-            return
-        }
-        
+        guard let date = format.date(from: data.date) else { return }
         let result = formatString.string(from: date)
-
         dateLabel.text = result
 
     }
-
 }

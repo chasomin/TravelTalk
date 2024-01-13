@@ -15,12 +15,23 @@ class ChatListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setTableView()
+        setUI()
+    }
+
+}
+
+
+extension ChatListViewController {
+    func setTableView() {
         let xib = UINib(nibName: ChatListTableViewCell.id, bundle: nil)
         tableView.register(xib, forCellReuseIdentifier: ChatListTableViewCell.id)
 
         tableView.dataSource = self
         tableView.delegate = self
-        
+    }
+    
+    func setUI() {
         navigationItem.title = "TRAVEL TALK"
         
         tableView.rowHeight = 85
@@ -28,13 +39,7 @@ class ChatListViewController: UIViewController {
         
         searchBar.placeholder = "친구 이름을 검색해보세요"
     }
-    
-    
-    
-
-
 }
-
 
 
 extension ChatListViewController: UITableViewDelegate, UITableViewDataSource {

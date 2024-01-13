@@ -8,10 +8,11 @@
 import UIKit
 
 class ChatDetailViewController: UIViewController {
-    var navigationTitle: String = ""
-    var data: ChatRoom = ChatRoom(chatroomId: 0, chatroomImage: [""], chatroomName: "")
 
     static let id = "ChatDetailViewController"
+    
+    var navigationTitle: String = ""
+    var data: ChatRoom = ChatRoom(chatroomId: 0, chatroomImage: [""], chatroomName: "")
     
     @IBOutlet var tableView: UITableView!
     
@@ -23,19 +24,21 @@ class ChatDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setUI()
         
-        navigationItem.title = navigationTitle
+        setTableView()
         
-        textView.text = "메시지를 입력하세요"
-        textView.layer.cornerRadius = 10
-        textView.backgroundColor = .systemGray6
-        textView.textColor = .gray
-        textView.font = .systemFont(ofSize: 15)
-        
-        sendButton.setTitle("", for: .normal)
-        sendButton.setImage(UIImage(systemName: "paperplane"), for: .normal)
-        sendButton.tintColor = .gray
-        
+//        tableView.scrollToRow(at: IndexPath(row: data.chatList.count - 1, section: 0), at: .bottom, animated: true)
+
+    }
+    
+
+    
+}
+
+extension ChatDetailViewController {
+    
+    func setTableView() {
         let xibMyBubble = UINib(nibName: "MyBubbleTableViewCell", bundle: nil)
         tableView.register(xibMyBubble, forCellReuseIdentifier: "MyBubbleTableViewCell")
         
@@ -45,15 +48,29 @@ class ChatDetailViewController: UIViewController {
 
         tableView.delegate = self
         tableView.dataSource = self
+        textView.delegate = self
         
-        tableView.rowHeight = UITableView.automaticDimension
-        
-        tableView.separatorStyle = .none
-
     }
     
+    func setUI() {
+        navigationItem.title = navigationTitle
+        
+        textView.layer.cornerRadius = 10
+        textView.backgroundColor = .systemGray6
+        textView.font = .systemFont(ofSize: 15)
+        textView.text = "메시지를 입력하세요"
+        textView.textColor = .gray
+        
+        
+        sendButton.setTitle("", for: .normal)
+        sendButton.setImage(UIImage(systemName: "paperplane"), for: .normal)
+        sendButton.tintColor = .gray
+        
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.separatorStyle = .none
+        
+    }
 
-    
 }
 
 extension ChatDetailViewController: UITableViewDelegate, UITableViewDataSource {
@@ -69,9 +86,28 @@ extension ChatDetailViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: FriendBubbleTableViewCell.id, for: indexPath) as! FriendBubbleTableViewCell
             cell.setCell(data: data.chatList[indexPath.row])
+            
             return cell
         }
     }
     
+        
+}
+
+
+extension ChatDetailViewController: UITextViewDelegate {
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "메시지를 입력하세요"
+            textView.textColor = .gray
+        }
+    }
     
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == .gray {
+            textView.text = nil
+            textView.textColor = .black
+        }
+
+    }
 }

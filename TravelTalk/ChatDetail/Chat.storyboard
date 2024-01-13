@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="675"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="메시지를 입력하세여" translatesAutoresizingMaskIntoConstraints="NO" id="vvm-8M-hpf">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vvm-8M-hpf">
                                 <rect key="frame" x="20" y="778" width="353" height="40"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>

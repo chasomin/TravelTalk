@@ -22,6 +22,13 @@ class ChatListTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        setUI()
+    } 
+
+}
+
+extension ChatListTableViewCell {
+    func setUI() {
         DispatchQueue.main.async {
             self.chatroomImageView.layer.cornerRadius = self.chatroomImageView.frame.width / 2
         }
@@ -42,7 +49,6 @@ class ChatListTableViewCell: UITableViewCell {
 
     }
     
-
     func setCell(data: ChatRoom) {
         chatroomImageView.image = UIImage(named: data.chatroomImage[0])
         
@@ -59,6 +65,5 @@ class ChatListTableViewCell: UITableViewCell {
         chatDateLabel.text = result
         
     }
-    
-
+   
 }

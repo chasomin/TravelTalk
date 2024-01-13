@@ -13,6 +13,10 @@
 		79AA6A0F2B52A4AB00FF45BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79AA6A0D2B52A4AB00FF45BC /* Main.storyboard */; };
 		79AA6A112B52A4AD00FF45BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79AA6A102B52A4AD00FF45BC /* Assets.xcassets */; };
 		79AA6A142B52A4AD00FF45BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79AA6A122B52A4AD00FF45BC /* LaunchScreen.storyboard */; };
+		79AA6A1C2B52A50300FF45BC /* ChattingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AA6A1B2B52A50300FF45BC /* ChattingData.swift */; };
+		79AA6A1E2B52A68600FF45BC /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AA6A1D2B52A68600FF45BC /* ChatListViewController.swift */; };
+		79AA6A212B52A71500FF45BC /* ChatListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AA6A1F2B52A71500FF45BC /* ChatListTableViewCell.swift */; };
+		79AA6A222B52A71500FF45BC /* ChatListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79AA6A202B52A71500FF45BC /* ChatListTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		79AA6A102B52A4AD00FF45BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		79AA6A132B52A4AD00FF45BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		79AA6A152B52A4AD00FF45BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79AA6A1B2B52A50300FF45BC /* ChattingData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChattingData.swift; sourceTree = "<group>"; };
+		79AA6A1D2B52A68600FF45BC /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
+		79AA6A1F2B52A71500FF45BC /* ChatListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListTableViewCell.swift; sourceTree = "<group>"; };
+		79AA6A202B52A71500FF45BC /* ChatListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatListTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +67,32 @@
 				79AA6A072B52A4AB00FF45BC /* AppDelegate.swift */,
 				79AA6A092B52A4AB00FF45BC /* SceneDelegate.swift */,
 				79AA6A0B2B52A4AB00FF45BC /* ViewController.swift */,
-				79AA6A0D2B52A4AB00FF45BC /* Main.storyboard */,
 				79AA6A102B52A4AD00FF45BC /* Assets.xcassets */,
 				79AA6A122B52A4AD00FF45BC /* LaunchScreen.storyboard */,
 				79AA6A152B52A4AD00FF45BC /* Info.plist */,
+				79AA6A242B52A73F00FF45BC /* Data */,
+				79AA6A232B52A72500FF45BC /* ChatList */,
 			);
 			path = TravelTalk;
+			sourceTree = "<group>";
+		};
+		79AA6A232B52A72500FF45BC /* ChatList */ = {
+			isa = PBXGroup;
+			children = (
+				79AA6A1D2B52A68600FF45BC /* ChatListViewController.swift */,
+				79AA6A0D2B52A4AB00FF45BC /* Main.storyboard */,
+				79AA6A1F2B52A71500FF45BC /* ChatListTableViewCell.swift */,
+				79AA6A202B52A71500FF45BC /* ChatListTableViewCell.xib */,
+			);
+			path = ChatList;
+			sourceTree = "<group>";
+		};
+		79AA6A242B52A73F00FF45BC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				79AA6A1B2B52A50300FF45BC /* ChattingData.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79AA6A142B52A4AD00FF45BC /* LaunchScreen.storyboard in Resources */,
+				79AA6A222B52A71500FF45BC /* ChatListTableViewCell.xib in Resources */,
 				79AA6A112B52A4AD00FF45BC /* Assets.xcassets in Resources */,
 				79AA6A0F2B52A4AB00FF45BC /* Main.storyboard in Resources */,
 			);
@@ -139,8 +168,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				79AA6A0C2B52A4AB00FF45BC /* ViewController.swift in Sources */,
+				79AA6A1C2B52A50300FF45BC /* ChattingData.swift in Sources */,
 				79AA6A082B52A4AB00FF45BC /* AppDelegate.swift in Sources */,
+				79AA6A212B52A71500FF45BC /* ChatListTableViewCell.swift in Sources */,
 				79AA6A0A2B52A4AB00FF45BC /* SceneDelegate.swift in Sources */,
+				79AA6A1E2B52A68600FF45BC /* ChatListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,8 +330,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,9 +340,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.chasomin.TravelTalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -326,8 +362,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -335,9 +372,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.chasomin.TravelTalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

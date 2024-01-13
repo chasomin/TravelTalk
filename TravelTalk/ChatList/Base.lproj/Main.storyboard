@@ -41,6 +41,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Y9T-Xm-Owm"/>
+                    <connections>
+                        <outlet property="searchBar" destination="eR8-lC-zBy" id="G6n-6z-yaW"/>
+                        <outlet property="tableView" destination="AkQ-1L-mAS" id="tfj-Ac-CAE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

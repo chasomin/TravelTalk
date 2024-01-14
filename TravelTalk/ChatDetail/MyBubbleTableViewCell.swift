@@ -16,6 +16,9 @@ class MyBubbleTableViewCell: UITableViewCell {
     
     @IBOutlet var bubbleView: UIView!
     
+    @IBOutlet var divisionLabel: UILabel!
+    
+    
     let format = DateFormatter()
     let formatString = DateFormatter()
 
@@ -44,12 +47,21 @@ extension MyBubbleTableViewCell {
         dateLabel.textAlignment = .center
         dateLabel.textColor = .gray
         
+        divisionLabel.text = ""
+        divisionLabel.font = .systemFont(ofSize: 12)
+        divisionLabel.textAlignment = .center
+        divisionLabel.backgroundColor = .systemGray6
+        divisionLabel.layer.cornerRadius = 10
+        divisionLabel.clipsToBounds = true
+        
+        
         format.dateFormat = "yyyy-MM-dd HH:mm"
         formatString.dateFormat = "hh:mm a"
         selectionStyle = .none
     }
     
     func setCell(data: Chat) {
+        
         chatBubbleLabel.text = data.message
         
         dateLabel.text = data.date
@@ -58,5 +70,8 @@ extension MyBubbleTableViewCell {
         let result = formatString.string(from: date)
         dateLabel.text = result
 
+        
+        
+        
     }
 }

@@ -85,11 +85,30 @@ extension ChatDetailViewController: UITableViewDelegate, UITableViewDataSource {
         if data.chatList[indexPath.row].user == .user {
             let cell = tableView.dequeueReusableCell(withIdentifier: MyBubbleTableViewCell.id, for: indexPath) as! MyBubbleTableViewCell
             cell.setCell(data: data.chatList[indexPath.row])
+            if indexPath.row != data.chatList.count-1 {
+                if data.chatList[indexPath.row].date.split(separator: " ")[0] != data.chatList[indexPath.row+1].date.split(separator: " ")[0] {
+                    print(data.chatList[indexPath.row].date.split(separator: " "))
+                    print(data.chatList[indexPath.row+1].date.split(separator: " "))
+                    cell.divisionLabel.text = String(data.chatList[indexPath.row+1].date.split(separator: " ")[0])
+                } else {
+                    cell.divisionLabel.isHidden = true
+                }
+                
+            }
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: FriendBubbleTableViewCell.id, for: indexPath) as! FriendBubbleTableViewCell
             cell.setCell(data: data.chatList[indexPath.row])
-            
+            if indexPath.row != data.chatList.count-1 {
+                if data.chatList[indexPath.row].date.split(separator: " ")[0] != data.chatList[indexPath.row+1].date.split(separator: " ")[0] {
+                    print(data.chatList[indexPath.row].date.split(separator: " "))
+                    print(data.chatList[indexPath.row+1].date.split(separator: " "))
+                    cell.divisionLabel.text = String(data.chatList[indexPath.row+1].date.split(separator: " ")[0])
+                } else {
+                    cell.divisionLabel.isHidden = true
+                }
+                
+            }
             return cell
         }
     }

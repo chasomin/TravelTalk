@@ -11,6 +11,8 @@ class ChatListViewController: UIViewController {
     
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
+    var mock = mockChatList
+    var arr:[ChatRoom] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,8 @@ extension ChatListViewController {
 
         tableView.dataSource = self
         tableView.delegate = self
+        
+        searchBar.delegate = self
     }
     
     func setUI() {
@@ -72,4 +76,25 @@ extension ChatListViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     
+}
+
+extension ChatListViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        arr = []
+        mockChatList = mock
+        if searchText != "" {
+            mockChatList.map {
+                if $0.chatroomName.contains(searchText) {
+                    arr.append($0)
+                }
+            }
+            mockChatList = arr
+
+        } else {
+            print("%%%%% 텍스트필트 빈 칸")
+            mockChatList = mock
+        }
+        print("====")
+        tableView.reloadData()
+    }
 }

@@ -24,6 +24,8 @@
 		79AA6A322B52BD9B00FF45BC /* FriendBubbleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AA6A302B52BD9B00FF45BC /* FriendBubbleTableViewCell.swift */; };
 		79AA6A332B52BD9B00FF45BC /* FriendBubbleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79AA6A312B52BD9B00FF45BC /* FriendBubbleTableViewCell.xib */; };
 		79AA6A362B52E3A800FF45BC /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 79AA6A352B52E3A800FF45BC /* IQKeyboardManagerSwift */; };
+		79AA6A392B53A3D000FF45BC /* MultiChatListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AA6A372B53A3D000FF45BC /* MultiChatListTableViewCell.swift */; };
+		79AA6A3A2B53A3D000FF45BC /* MultiChatListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79AA6A382B53A3D000FF45BC /* MultiChatListTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,8 @@
 		79AA6A2D2B52BD8500FF45BC /* MyBubbleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyBubbleTableViewCell.xib; sourceTree = "<group>"; };
 		79AA6A302B52BD9B00FF45BC /* FriendBubbleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendBubbleTableViewCell.swift; sourceTree = "<group>"; };
 		79AA6A312B52BD9B00FF45BC /* FriendBubbleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendBubbleTableViewCell.xib; sourceTree = "<group>"; };
+		79AA6A372B53A3D000FF45BC /* MultiChatListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiChatListTableViewCell.swift; sourceTree = "<group>"; };
+		79AA6A382B53A3D000FF45BC /* MultiChatListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultiChatListTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 				79AA6A0D2B52A4AB00FF45BC /* Main.storyboard */,
 				79AA6A1F2B52A71500FF45BC /* ChatListTableViewCell.swift */,
 				79AA6A202B52A71500FF45BC /* ChatListTableViewCell.xib */,
+				79AA6A372B53A3D000FF45BC /* MultiChatListTableViewCell.swift */,
+				79AA6A382B53A3D000FF45BC /* MultiChatListTableViewCell.xib */,
 			);
 			path = ChatList;
 			sourceTree = "<group>";
@@ -188,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79AA6A142B52A4AD00FF45BC /* LaunchScreen.storyboard in Resources */,
+				79AA6A3A2B53A3D000FF45BC /* MultiChatListTableViewCell.xib in Resources */,
 				79AA6A2F2B52BD8500FF45BC /* MyBubbleTableViewCell.xib in Resources */,
 				79AA6A222B52A71500FF45BC /* ChatListTableViewCell.xib in Resources */,
 				79AA6A332B52BD9B00FF45BC /* FriendBubbleTableViewCell.xib in Resources */,
@@ -208,6 +215,7 @@
 				79AA6A272B52BCDB00FF45BC /* ChatDetailViewController.swift in Sources */,
 				79AA6A1C2B52A50300FF45BC /* ChattingData.swift in Sources */,
 				79AA6A322B52BD9B00FF45BC /* FriendBubbleTableViewCell.swift in Sources */,
+				79AA6A392B53A3D000FF45BC /* MultiChatListTableViewCell.swift in Sources */,
 				79AA6A2E2B52BD8500FF45BC /* MyBubbleTableViewCell.swift in Sources */,
 				79AA6A082B52A4AB00FF45BC /* AppDelegate.swift in Sources */,
 				79AA6A212B52A71500FF45BC /* ChatListTableViewCell.swift in Sources */,

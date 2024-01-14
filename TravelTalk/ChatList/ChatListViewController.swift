@@ -29,6 +29,10 @@ extension ChatListViewController {
         let xib = UINib(nibName: ChatListTableViewCell.id, bundle: nil)
         tableView.register(xib, forCellReuseIdentifier: ChatListTableViewCell.id)
 
+        
+        let xibMulti = UINib(nibName: MultiChatListTableViewCell.id, bundle: nil)
+        tableView.register(xibMulti, forCellReuseIdentifier: MultiChatListTableViewCell.id)
+
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -53,10 +57,17 @@ extension ChatListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ChatListTableViewCell.id, for: indexPath) as! ChatListTableViewCell
-        
-        cell.setCell(data: mockChatList[indexPath.row])
-        return cell
+        if mockChatList[indexPath.row].chatroomImage.count == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: ChatListTableViewCell.id, for: indexPath) as! ChatListTableViewCell
+            
+            cell.setCell(data: mockChatList[indexPath.row])
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: MultiChatListTableViewCell.id, for: indexPath) as! MultiChatListTableViewCell
+            
+            cell.setCell(data: mockChatList[indexPath.row])
+            return cell
+        }
         
         
     }

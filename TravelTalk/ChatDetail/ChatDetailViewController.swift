@@ -28,7 +28,6 @@ class ChatDetailViewController: UIViewController {
         
         setTableView()
         
-//        tableView.scrollToRow(at: IndexPath(row: data.chatList.count - 1, section: 0), at: .bottom, animated: true)
 
     }
     
@@ -50,6 +49,10 @@ extension ChatDetailViewController {
         tableView.dataSource = self
         textView.delegate = self
         
+        // 채팅방 맨 아래로 스크롤
+        DispatchQueue.main.async {
+            self.tableView.scrollToRow(at: IndexPath(row: self.data.chatList.count - 1, section: 0), at: .bottom, animated: true)
+        }
     }
     
     func setUI() {

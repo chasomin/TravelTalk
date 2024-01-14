@@ -40,6 +40,9 @@ extension FriendBubbleTableViewCell {
         }
         profileImageView.contentMode = .scaleAspectFill
         
+        nameLabel.font = .systemFont(ofSize: 15)
+        chatBubbleLabel.textAlignment = .left
+
         chatBubbleLabel.font = .systemFont(ofSize: 15)
         chatBubbleLabel.numberOfLines = 0
         chatBubbleLabel.textAlignment = .left

@@ -94,7 +94,7 @@ extension ChatListViewController: UISearchBarDelegate {
         arr = []
         mockChatList = mock
         if searchText != "" {
-            mockChatList.map {
+            mockChatList.forEach {
                 if $0.chatroomName.contains(searchText) {
                     arr.append($0)
                 }

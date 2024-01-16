@@ -31,11 +31,11 @@ class MultiChatListTableViewCell: UITableViewCell {
 extension MultiChatListTableViewCell {
     func setUI() {
         DispatchQueue.main.async {
-            self.chatroomImageView.map{
+            self.chatroomImageView.forEach{
                 $0.layer.cornerRadius = $0.frame.width / 2
             }
         }
-        chatroomImageView.map {
+        chatroomImageView.forEach {
             $0.contentMode = .scaleAspectFill
         }
         
